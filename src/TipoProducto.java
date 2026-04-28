@@ -3,11 +3,11 @@
  */
 public enum TipoProducto {
 
-    Cocacola(500),
-    Sprite(500),
-    Fanta(500),
-    Super8(300),
-    Snickers(300),
+    COCACOLA(500),
+    SPRITE(500),
+    FANTA(500),
+    SUPER8(300),
+    SNICKERS(300);
 
     private int precio;
 
