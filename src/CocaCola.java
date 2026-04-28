@@ -1,4 +1,9 @@
-package PACKAGE_NAME;
+ /**
+  * Representa la bebida Cocacola
+  */
+ public class CocaCola extends Bebida{
+     public CocaCola(){
+         super(TipoProducto.COCACOLA);
+     }
+ }
 
-public class CocaCola {
-}
