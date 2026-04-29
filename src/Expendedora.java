@@ -38,7 +38,7 @@ public class Expendedora {
 
         }
         int precioProd = tipo.getPrecio();
-        if (m.getvalor() < precioProd) {
+        if (m.getValor() < precioProd) {
             monVu.getItem(m);
             throw new PagoInsuficienteException();
         }
@@ -59,9 +59,9 @@ public class Expendedora {
             p=super8.getItem();
         }
         if (p!=null) {
-            int vuelto=m.getValor()-precioProducto;
+            int vuelto=m.getValor()-p.getPrecio();
             while (vuelto>0) {
-                monVu.getItem(new Moneda100());
+                monVu.addItem(new Moneda100());
                 vuelto-=100;
             }
             return p;
