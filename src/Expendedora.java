@@ -39,7 +39,7 @@ public class Expendedora {
         }
         int precioProd = tipo.getPrecio();
         if (m.getValor() < precioProd) {
-            monVu.getItem(m);
+            monVu.addItem(m);
             throw new PagoInsuficienteException();
         }
         Producto p=null;
