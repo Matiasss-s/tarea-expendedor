@@ -1,7 +1,14 @@
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * Clase principal que ejecuta pruebas automatizadas sobre el sistema de la máquina expendedora.
+ * Demuestra compras exitosas, manejo de excepciones y ordenamiento de monedas.
+ */
 public class Maintotal {
+    /**
+     * Método ejecutable principal con los casos de prueba.
+     * @param args Argumentos de la línea de comandos (no se utilizan).
+     */
     public static void main(String[] args) {
         Expendedora exp = new Expendedora(1);
 
