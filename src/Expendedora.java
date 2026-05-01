@@ -1,3 +1,7 @@
+/**
+ * Simula una máquina expendedora que almacena productos en depósitos y procesa las ventas.
+ */
+
 public class Expendedora {
     private Deposito<Producto> coca;
     private Deposito<Producto> sprite;
@@ -27,7 +31,15 @@ public class Expendedora {
             super8.addItem(new Super8());
         }
     }
-
+    /**
+     * Intenta vender un producto validando el pago y el stock disponible.
+     * @param m La moneda con la que se paga.
+     * @param tipo El tipo de producto deseado.
+     * @return El objeto Producto comprado.
+     * @throws PagoIncorrectoException Si la moneda ingresada es nula.
+     * @throws PagoInsuficienteException Si el valor de la moneda es menor al precio del producto.
+     * @throws NoHayProductoException Si no queda stock del producto en el depósito.
+     */
     public Producto comprarProd(Moneda m, TipoProducto tipo)
             throws
             PagoIncorrectoException,
@@ -71,6 +83,11 @@ public class Expendedora {
             throw new NoHayProductoException();
         }
     }
+
+    /**
+     * Entrega el vuelto moneda por moneda (de a 100 pesos).
+     * @return Una Moneda de 100, o null si ya no queda más vuelto por entregar.
+     */
     public Moneda getVuelto(){
         return monVu.getItem();
     }
