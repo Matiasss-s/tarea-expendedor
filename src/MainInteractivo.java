@@ -49,12 +49,17 @@ public class MainInteractivo {
             else if (valor == 500) m = new Moneda500();
             else if (valor == 1000) m = new Moneda1000();
 
-            Comprador comp = new Comprador(m, tipo, exp);
+            try {
+                Comprador comp = new Comprador(m, tipo, exp);
 
-            if (comp.getProducto() != null) {
-                System.out.println("Compra exitosa.");
+                if (comp.getProducto() != null) {
+                    System.out.println("Compra exitosa. Retiraste: " + comp.getProducto());
+                }
+                System.out.println("Vuelto entregado: $" + comp.getVuelto());
+
+            } catch (PagoIncorrectoException | PagoInsuficienteException | NoHayProductoException e) {
+                System.out.println(e.getMessage());
             }
-            System.out.println("Vuelto entregado: $" + comp.getVuelto());
         }
     }
 }

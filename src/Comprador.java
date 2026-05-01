@@ -8,26 +8,17 @@ public class Comprador {
 
     /**
      * Constructor del comprador.
-     * Intenta omprar un producto con la moneda que se le dfa.
-     * En caso de error, usamos exceptions y se mostrará el consola.
+     * Intenta comprar un producto con la moneda que se le da.
      * @param m moneda con la que paga
      * @param tipo es el tipo de producto que elige el comprador
      * @param expendedora maquina expendedora
      */
-    public Comprador(Moneda m, TipoProducto tipo, Expendedora expendedora){
+    public Comprador(Moneda m, TipoProducto tipo, Expendedora expendedora) throws PagoIncorrectoException,
+            PagoInsuficienteException,
+            NoHayProductoException{
         this.producto = null;
         this.vuelto = 0;
-
-        try{ // Con este try vamos a intentar comprar el producto
-            producto = expendedora.comprarProd(m, tipo);
-        } catch (PagoIncorrectoException e){
-            System.out.println("Pago incorrecto");
-        } catch (PagoInsuficienteException e){
-            System.out.println("Pago Insuficiente");
-        } catch (NoHayProductoException e){
-            System.out.println("No hay producto disponible");
-        }
-
+        this.producto = expendedora.comprarProd(m, tipo);
         // Recupera todo el vuelto
         Moneda monedaVuelto;
 
