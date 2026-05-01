@@ -1,6 +1,10 @@
+/**
+ * Clase abstracta que define el comportamiento base de las monedas.
+ */
 public abstract class Moneda implements Comparable<Moneda> {
     public Moneda() {}
 
+    /** @return El valor entero de la moneda. */
     public abstract int getValor();
 
     @Override

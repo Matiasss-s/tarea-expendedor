@@ -1,6 +1,13 @@
 import java.util.Scanner;
 
+/**
+ * Clase principal que permite la interacción del usuario con la expendedora.
+ */
 public class MainInteractivo {
+    /**
+     * Inicia el bucle de compra y gestiona la entrada por teclado.
+     * @param args argumentos de línea de comandos.
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Expendedora exp = new Expendedora(2);
